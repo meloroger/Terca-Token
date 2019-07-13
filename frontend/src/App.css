@@ -1,0 +1,61 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #3e5781;
+}
+
+#exchange-sidenav button {
+  width: 70%;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  font-size: 2rem;
+}
+
+#exchange-links #countdown {
+  width: 70%;
+  margin-top: 4rem;
+  font-weight: bold;
+}
+
+#exchange-links #about {
+  width: 70%;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+#centerfold-h1 {
+  margin-bottom: 2rem;
+  color: #fff;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+#info {
+  color: #fff;
+  font-weight: 500;
+}
+
+.card-content {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  text-align: center;
+  font-weight: 800;
+  color: black;
+}
+
+#card-link {
+  color: #3e5781;
+}
+
+#user-view {
+  margin-top: 2rem;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+#account-side {
+  font-size: 12px;
+}
+
+#side-h4 {
+  margin-bottom: 2rem;
+}

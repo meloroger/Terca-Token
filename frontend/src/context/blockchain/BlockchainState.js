@@ -2,13 +2,13 @@ import React, { useReducer, useEffect } from 'react';
 import Web3 from 'web3';
 import BlockchainContext from './blockchainContext';
 import BlockchainReducer from './blockchainReducer';
-import { BLOCKCHAIN_DATA, SET_LOADING, SET_ACCOUNT } from './types';
+import { BLOCKCHAIN_DATA, SET_LOADING, SET_ACCOUNT } from '../types';
 import {
   TOKENSALE_ABI,
   TOKENSALE_ADDRESS,
   TOKEN_ABI,
   TOKEN_ADDRESS
-} from './config';
+} from '../config';
 
 const BlockchainState = props => {
   const initialState = {

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from 'react';
 import Test from './Test';
-import BlockchainContext from '../context/blockchainContext';
+import BlockchainContext from '../context/blockchain/blockchainContext';
 
 const Countdown = () => {
   const blockchainContext = useContext(BlockchainContext);

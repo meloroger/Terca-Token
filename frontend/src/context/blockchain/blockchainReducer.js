@@ -1,4 +1,4 @@
-import { BLOCKCHAIN_DATA, SET_LOADING, SET_ACCOUNT } from './types';
+import { BLOCKCHAIN_DATA, SET_LOADING, SET_ACCOUNT } from '../types';
 
 export default (state, action) => {
   switch (action.type) {

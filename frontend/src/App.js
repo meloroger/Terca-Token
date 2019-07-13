@@ -4,8 +4,10 @@ import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './App.css';
 
-import BlockchainState from './context/BlockchainState';
+import BlockchainState from './context/blockchain/BlockchainState';
 import Countdown from './pages/Countdown';
+import Exchange from './pages/Exchange';
+import About from './pages/About';
 
 const App = () => {
   useEffect(() => {
@@ -17,9 +19,11 @@ const App = () => {
     <BlockchainState>
       <Router>
         <div className='App'>
-          <div className='container'>
+          <div>
             <Switch>
               <Route exact path='/' component={Countdown} />
+              <Route exact path='/exchange' component={Exchange} />
+              <Route exact path='/about' component={About} />
             </Switch>
           </div>
         </div>
