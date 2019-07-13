@@ -1,7 +1,11 @@
 import React, { useEffect } from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import 'materialize-css/dist/css/materialize.min.css';
 import M from 'materialize-css/dist/js/materialize.min.js';
 import './App.css';
+
+import BlockchainState from './context/BlockchainState';
+import Countdown from './pages/Countdown';
 
 const App = () => {
   useEffect(() => {
@@ -10,11 +14,17 @@ const App = () => {
   });
 
   return (
-    <div className='App'>
-      <div className='container'>
-        <h1>Terca Token</h1>
-      </div>
-    </div>
+    <BlockchainState>
+      <Router>
+        <div className='App'>
+          <div className='container'>
+            <Switch>
+              <Route exact path='/' component={Countdown} />
+            </Switch>
+          </div>
+        </div>
+      </Router>
+    </BlockchainState>
   );
 };
 
