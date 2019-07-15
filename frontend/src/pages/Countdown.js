@@ -54,7 +54,7 @@ const Countdown = () => {
         <div className='landing-inner'>
           <h1 id='title'>Terca Tokens</h1>
           <p>A fun-for-all project</p>
-          <h1>Ending Soon!</h1>
+          <h1>Come and Get Some!</h1>
           <div className='countdown' />
           <div className='countdown-links'>
             <a href='/exchange' id='exchange'>

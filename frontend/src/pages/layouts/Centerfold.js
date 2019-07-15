@@ -17,7 +17,7 @@ const Centerfold = () => {
             <button
               href='#!'
               data-target='slide-out'
-              className='sidenav-trigger btn-large waves-effect blue'>
+              className='sidenav-trigger btn-large waves-effect green lighten-2'>
               EXCHANGE NOW!
             </button>
           </div>
@@ -47,6 +47,9 @@ const Centerfold = () => {
                   Free Ether
                 </button>
               </a>
+              <p className='red'>
+                When switching accounts, please refresh browser
+              </p>
             </li>
           </ul>
         </div>
