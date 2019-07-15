@@ -2,13 +2,13 @@ import React from 'react';
 
 const Centerfold = () => {
   return (
-    <div>
-      <div id='centerfold' className='row'>
-        <div className='col s3' />
+    <div className='exchange'>
+      <div id='centerfold' className='row '>
+        <div id='spacer' className='col s3' />
         <div className='col s6 center-align'>
           <h1 id='centerfold-h1'>Terca Tokens</h1>
           <div id='info'>
-            <p>
+            <p className='flow-text'>
               Tokens have no real value!! These tokens are deployed to the
               Ropsten Test Network
             </p>
@@ -25,16 +25,26 @@ const Centerfold = () => {
         <div id='exchange-links' className='col s3 center-align'>
           <ul>
             <li>
-              <a href='/countdown'>
+              <a href='/'>
                 <button className='btn waves blue' id='countdown'>
                   Countdown
                 </button>
               </a>
             </li>
             <li>
-              <a href='/'>
+              <a href='/about'>
                 <button className='btn waves blue' id='about'>
                   About
+                </button>
+              </a>
+            </li>
+            <li>
+              <a
+                href='https://faucet.ropsten.be/'
+                target='_blank'
+                rel='noopener noreferrer'>
+                <button className='btn waves blue' id='about'>
+                  Free Ether
                 </button>
               </a>
             </li>
@@ -42,9 +52,9 @@ const Centerfold = () => {
         </div>
       </div>
       <div id='metamask' className='row'>
-        <div className='col s3' />
-        <div className='col s3'>
-          <div className='card'>
+        <div id='spacer' className='col s3' />
+        <div id='card1' className='col s3'>
+          <div className='card hoverable'>
             <div className='card-content'>
               <p className='center-align'>METAMASK</p>
               <br />
@@ -64,10 +74,10 @@ const Centerfold = () => {
             </div>
           </div>
         </div>
-        <div className='col s3'>
-          <div className='card'>
+        <div id='card2' className='col s3'>
+          <div className='card hoverable'>
             <div className='card-content'>
-              <p className='center-align'>IMPORT YOUR TERCA TOKENS</p>
+              <p className='center-align flow-text'>IMPORT YOUR TERCA TOKENS</p>
               <br />
               <p>
                 Take this Contract Address:{' '}
@@ -81,13 +91,13 @@ const Centerfold = () => {
                 href='https://metamask.zendesk.com/hc/en-us/articles/360015489031-How-to-View-Your-Tokens'
                 target='_blank'
                 rel='noopener noreferrer'>
-                CLICK HERE FOR HELP
+                HELP
               </a>
             </div>
           </div>
         </div>
 
-        <div className='col s3' />
+        <div id='spacer' className='col s3' />
       </div>
     </div>
   );

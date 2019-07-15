@@ -111,7 +111,7 @@ export const TOKENSALE_ABI = [
     type: 'function'
   }
 ];
-export const TOKENSALE_ADDRESS = '0x7B536Db09fe89cf0F823C1E6768f58397442Aeb1';
+export const TOKENSALE_ADDRESS = '0x62e9260466D900d8b13c82D95530D666cAB95ab7';
 export const TOKEN_ABI = [
   {
     constant: true,
@@ -375,4 +375,4 @@ export const TOKEN_ABI = [
     type: 'function'
   }
 ];
-export const TOKEN_ADDRESS = '0x5E54d1031F3b97f80488AA25F7A75471F6646Fae';
+export const TOKEN_ADDRESS = '0xB38833F940fB861b6bC1618633b617b798381b18';

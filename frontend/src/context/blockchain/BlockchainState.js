@@ -15,7 +15,7 @@ const BlockchainState = props => {
     accounts: [],
     loading: false,
     tokenSale: null,
-    token: '',
+    token: null,
     tokensAvailable: 0,
     tokensSold: 0,
     transaction: null
@@ -28,15 +28,15 @@ const BlockchainState = props => {
   }, []);
 
   const [state, dispatch] = useReducer(BlockchainReducer, initialState);
-  window.ethereum.on('accountsChanged', accounts => {
-    dispatch({
-      type: SET_LOADING
-    });
-    dispatch({
-      type: SET_ACCOUNT,
-      payload: accounts
-    });
-  });
+  // window.ethereum.on('accountsChanged', accounts => {
+  //   dispatch({
+  //     type: SET_LOADING
+  //   });
+  //   dispatch({
+  //     type: SET_ACCOUNT,
+  //     payload: accounts
+  //   });
+  // });
   const blockchainData = async () => {
     dispatch({
       type: SET_LOADING
@@ -73,6 +73,19 @@ const BlockchainState = props => {
     return { token, tokenSale };
   };
 
+  const exchangeTokens = numberOfTokens => {
+    this.tokenSale
+      .deployed()
+      .then(instance => {
+        return instance.buyTokens(numberOfTokens, {
+          from: this.accounts[0],
+          value: numberOfTokens,
+          gas: 500000
+        });
+      })
+      .then(result => console.log('tokens bought...', result));
+  };
+
   return (
     <BlockchainContext.Provider
       value={{
@@ -83,7 +96,9 @@ const BlockchainState = props => {
         tokensSold: state.tokensSold,
         transaction: state.transaction,
         loading: state.loading,
-        blockchainData
+
+        blockchainData,
+        exchangeTokens
       }}>
       {props.children}
     </BlockchainContext.Provider>
