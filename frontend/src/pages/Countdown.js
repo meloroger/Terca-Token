@@ -1,4 +1,5 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, Fragment } from 'react';
+import Footer from './layouts/Footer';
 
 const Countdown = () => {
   useEffect(() => {
@@ -55,17 +56,20 @@ const Countdown = () => {
           <h1 id='title'>Terca Tokens</h1>
           <p>A fun-for-all project</p>
           <h1>Come and Get Some!</h1>
-          <div className='countdown' />
-          <div className='countdown-links'>
-            <a href='/exchange' id='exchange'>
-              <button className='btn waves blue darken-3'>Exchange</button>
-            </a>
-            <a href='/about' id='about'>
-              <button className='btn waves blue darken-3'>About</button>
-            </a>
-          </div>
+          <Fragment>
+            <div className='countdown' />
+            <div className='countdown-links'>
+              <a href='/exchange' id='exchange'>
+                <button className='btn waves blue darken-3'>Exchange</button>
+              </a>
+              <a href='/about' id='about'>
+                <button className='btn waves blue darken-3'>About</button>
+              </a>
+            </div>
+          </Fragment>
         </div>
       </section>
+      <Footer />
     </div>
   );
 };

@@ -2,75 +2,65 @@ import React, { useReducer, useEffect } from 'react';
 import Web3 from 'web3';
 import BlockchainContext from './blockchainContext';
 import BlockchainReducer from './blockchainReducer';
-import { BLOCKCHAIN_DATA, SET_LOADING, SET_ACCOUNT } from '../types';
 import {
-  TOKENSALE_ABI,
-  TOKENSALE_ADDRESS,
-  TOKEN_ABI,
-  TOKEN_ADDRESS
-} from '../config';
+  BLOCKCHAIN_DATA,
+  SET_LOADING,
+  SET_ACCOUNT,
+  SET_TOKENSALE
+} from '../types';
+import { TOKENSALE_ABI, TOKENSALE_ADDRESS } from '../config';
 
 const BlockchainState = props => {
   const initialState = {
     accounts: [],
     loading: false,
-    tokenSale: null,
-    token: null,
-    tokensAvailable: 0,
-    tokensSold: 0,
-    transaction: null
+    tokenSale: null
   };
 
   useEffect(() => {
     blockchainData();
-
     // eslint-disable-next-line
   }, []);
 
   const [state, dispatch] = useReducer(BlockchainReducer, initialState);
-  // window.ethereum.on('accountsChanged', accounts => {
-  //   dispatch({
-  //     type: SET_LOADING
-  //   });
-  //   dispatch({
-  //     type: SET_ACCOUNT,
-  //     payload: accounts
-  //   });
-  // });
+
+  const bootstrap = {
+    blockchainInit: () => {
+      const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
+      bootstrap.accounts(web3);
+      bootstrap.tokenSale(web3);
+    },
+
+    accounts: async web3 => {
+      const accounts = await web3.eth.getAccounts();
+      dispatch({
+        type: SET_ACCOUNT,
+        payload: accounts
+      });
+    },
+
+    tokenSale: async web3 => {
+      const tokenSale = await new web3.eth.Contract(
+        TOKENSALE_ABI,
+        TOKENSALE_ADDRESS
+      );
+      dispatch({
+        type: SET_TOKENSALE,
+        payload: tokenSale
+      });
+    }
+  };
+
   const blockchainData = async () => {
     dispatch({
       type: SET_LOADING
     });
-    const web3 = new Web3(Web3.givenProvider || 'http://localhost:7545');
-    const network = await web3.eth.net.getNetworkType();
-    console.log('network: ', network);
-    web3.eth.defaultAccount = await web3.eth.getAccounts();
-    let accounts = await web3.eth.getAccounts();
 
-    const { token, tokenSale } = await contracts(web3);
-    console.log(accounts);
-
-    let res = {
-      network,
-      token,
-      accounts,
-      tokenSale
-    };
-    console.log(res);
+    bootstrap.blockchainInit();
 
     dispatch({
-      type: BLOCKCHAIN_DATA,
-      payload: res
+      type: BLOCKCHAIN_DATA
     });
-  };
-
-  const contracts = web3 => {
-    const tokenSale = new web3.eth.Contract(TOKENSALE_ABI, TOKENSALE_ADDRESS);
-    console.log(tokenSale);
-
-    const token = new web3.eth.Contract(TOKEN_ABI, TOKEN_ADDRESS);
-
-    return { token, tokenSale };
   };
 
   const exchangeTokens = numberOfTokens => {
@@ -91,13 +81,7 @@ const BlockchainState = props => {
       value={{
         accounts: state.accounts,
         tokenSale: state.tokenSale,
-        token: state.token,
-        tokensAvailable: state.tokensAvailable,
-        tokensSold: state.tokensSold,
-        transaction: state.transaction,
         loading: state.loading,
-
-        blockchainData,
         exchangeTokens
       }}>
       {props.children}

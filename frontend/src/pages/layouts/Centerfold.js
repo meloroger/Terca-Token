@@ -12,6 +12,9 @@ const Centerfold = () => {
               Tokens have no real value!! These tokens are deployed to the
               Ropsten Test Network
             </p>
+            <p className='hide-on-small-only'>
+              Contract Address: 0x55fE35897bbb60383a3e45117b92db9148688558
+            </p>
           </div>
           <div id='exchange-sidenav'>
             <button
@@ -83,9 +86,7 @@ const Centerfold = () => {
               <p className='center-align flow-text'>IMPORT YOUR TERCA TOKENS</p>
               <br />
               <p>
-                Take this Contract Address:{' '}
-                <strong>0x0dfjalkdjkfakdsakjfdsdka</strong> and insert it in the
-                add token section in your MetaMask Wallet.
+                Use the Contract Address to add tokens in your MetaMask Wallet.
               </p>
             </div>
             <div className='card-action center-align'>

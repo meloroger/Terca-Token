@@ -6,7 +6,7 @@ const SideNav = () => {
   const { accounts, tokenSale } = blockchainContext;
 
   const exchangeTokens = () => {
-    let tokens = document.getElementById('tokens');
+    const tokens = document.getElementById('tokens');
     const tokenPrice = 100000000000000000;
 
     tokenSale.methods
