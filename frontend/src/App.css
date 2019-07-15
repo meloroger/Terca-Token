@@ -67,9 +67,14 @@ body {
   padding-top: 3rem;
 }
 
+#sidenav-text {
+  color: #333;
+  line-height: 1.5;
+}
+
 @media (max-width: 650px) {
   .exchange {
-    height: 100vh;
+    height: 100%;
   }
 
   #centerfold .row {
@@ -78,6 +83,7 @@ body {
   }
 
   #centerfold-h1 {
+    display: inline-block;
     font-size: 50px;
     padding: 10px;
     margin: 0;
@@ -116,23 +122,26 @@ body {
 
   #metamask {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     width: 100%;
     align-items: center;
     justify-content: center;
   }
 
   .card-content {
-    display: none;
+    padding: 0 5px;
   }
 
   #card1 {
     width: 90%;
+    text-align: left;
+    margin: 0;
   }
 
   #card2 {
     width: 90%;
-    font-size: 20px;
+    text-align: left;
+    margin: 0;
   }
 }
 

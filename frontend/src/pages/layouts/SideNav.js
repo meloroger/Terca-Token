@@ -49,11 +49,20 @@ const SideNav = () => {
                     </button>
                   </div>
                 </form>
-                <div className='row'>
+                <div id='sidenav-text' className='row'>
                   <div className='center-align'>
-                    <p>Your Account Address:</p>
+                    <p>
+                      MetaMask is in Privacy Mode by default this could cause
+                      issues
+                    </p>
                     <hr />
+                    <p>Your Account</p>
                     <p id='account-side'>{accounts}</p>
+                    <hr />
+                    <p>
+                      If transactions are failing, please try resetting your
+                      transaction history in your MetaMask Wallet
+                    </p>
                   </div>
                 </div>
               </div>

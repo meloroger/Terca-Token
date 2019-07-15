@@ -58,10 +58,10 @@ const Countdown = () => {
           <div className='countdown' />
           <div className='countdown-links'>
             <a href='/exchange' id='exchange'>
-              <button className='btn waves blue'>Exchange</button>
+              <button className='btn waves blue darken-3'>Exchange</button>
             </a>
             <a href='/about' id='about'>
-              <button className='btn waves blue'>About</button>
+              <button className='btn waves blue darken-3'>About</button>
             </a>
           </div>
         </div>
