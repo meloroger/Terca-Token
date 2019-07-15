@@ -19,6 +19,7 @@ const BlockchainState = props => {
 
   useEffect(() => {
     blockchainData();
+
     // eslint-disable-next-line
   }, []);
 
