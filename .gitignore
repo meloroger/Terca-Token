@@ -2,7 +2,9 @@ build
 migrations
 truffle-config.js
 frontend/src/context/config.js
-
+.env.local
+frontend/netlify.toml
+frontend/.netlify
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
